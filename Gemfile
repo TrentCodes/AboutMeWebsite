@@ -8,6 +8,8 @@ ruby '2.5.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 
+gem 'travis'
+
 gem 'pg'
 
 gem 'rails_12factor'
