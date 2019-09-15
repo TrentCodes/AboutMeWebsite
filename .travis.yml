@@ -2,12 +2,8 @@ language: ruby
 rvm:
 - 2.5.5
 
-env:
-  - DB=postgresql
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec spec/
-before_script:
-  - psql -c 'create database my_app_test' -U postgres
-bundler_args: --binstubs=./bundler_stubs
+ — bundle install — jobs=3 — retry=3
+ — bundle exec rake db:create
+ — bundle exec rake db:migrate
+ — bundle exec rspec
